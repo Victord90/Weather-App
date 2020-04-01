@@ -1,0 +1,11 @@
+nav {
+  background-color: skyblue;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: black solid 2px;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: bold;
+}
