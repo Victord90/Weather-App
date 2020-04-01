@@ -10,19 +10,19 @@ export const Navi = () => (
       <Nav className="ml-auto">
         <Nav.Item>
           <Navbar.Brand href="https://github.com/Victord90" target="_blank">
-            Git Hub
+            <h4 className="navbuttons">Git Hub</h4>
           </Navbar.Brand>
           <Navbar.Brand
             href="https://linkedin.com/in/victor-dominguez-b444b7191"
             target="blank_"
           >
-            LinkedIn
+            <h4 className="navbuttons">LinkedIn</h4>
           </Navbar.Brand>
           <Navbar.Brand
             href="https://victord90.github.io/Portfolio/"
             target="_blank"
           >
-            Profile
+            <h4 className="navbuttons">Portfolio</h4>
           </Navbar.Brand>
         </Nav.Item>
       </Nav>

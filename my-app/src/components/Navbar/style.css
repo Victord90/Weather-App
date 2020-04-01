@@ -8,4 +8,13 @@ nav {
 h2 {
   font-size: 40px;
   font-weight: bold;
+  color: black;
+}
+
+.navbuttons {
+  font-weight: bold;
+}
+
+.navbuttons:hover {
+  color: white;
 }
