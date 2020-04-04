@@ -2,6 +2,16 @@ import React from "react";
 import WeatherCard from "./weatherCard";
 
 class ControlledCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      items: [],
+      location: ""
+    };
+  }
+
   componentDidMount() {
     fetch(
       "https://api.openweathermap.org/data/2.5/forecast?q=Orlando,Florida&APPID=4f8e39992eb342ab7998501f63a56617"
@@ -10,15 +20,32 @@ class ControlledCard extends React.Component {
       .then(
         result => {
           console.log(result);
+          this.setState({
+            isLoaded: true,
+            location: result.city.name,
+            items: result.list
+          });
         },
         error => {
           console.log(error);
+          this.setState({
+            isLoaded: true,
+            error
+          });
         }
       );
   }
 
+  city = location => {
+    return <h1>City: {location}</h1>;
+  };
+
   renderCard = () => {
-    return <WeatherCard />;
+    const CardItems = this.state.items.map(list => {
+      return <WeatherCard key={list.id} list={list} location={this.city} />;
+    });
+
+    return <>{CardItems}</>;
   };
 
   render() {
