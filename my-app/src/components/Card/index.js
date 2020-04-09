@@ -1,5 +1,6 @@
 import React from "react";
 import WeatherCard from "./weatherCard";
+import CurrentWeather from "./CurrentWeather";
 
 class ControlledCard extends React.Component {
   constructor(props) {
@@ -9,6 +10,8 @@ class ControlledCard extends React.Component {
       isLoaded: false,
       items: [],
       location: "",
+      current: "",
+      currentFeel: "",
     };
   }
 
@@ -24,6 +27,8 @@ class ControlledCard extends React.Component {
             isLoaded: true,
             location: result.timezone,
             items: result.daily,
+            current: result.current,
+            currentFeel: result.current.weather[0].description,
           });
         },
         (error) => {
@@ -40,6 +45,7 @@ class ControlledCard extends React.Component {
     const CardItems = this.state.items.map((list) => {
       return (
         <>
+          {/* <CurrentWeather current={this.state.current} /> */}
           <WeatherCard
             key={list.id}
             list={list}
@@ -49,7 +55,15 @@ class ControlledCard extends React.Component {
       );
     });
 
-    return <>{CardItems}</>;
+    return (
+      <>
+        <CurrentWeather
+          current={this.state.current}
+          currentFeel={this.state.currentFeel}
+        />
+        {CardItems}
+      </>
+    );
   };
 
   render() {
