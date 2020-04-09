@@ -14,7 +14,7 @@ class ControlledCard extends React.Component {
 
   componentDidMount() {
     fetch(
-      "https://api.openweathermap.org/data/2.5/onecall?lat=28.5383&lon=-81.3792&appid=4f8e39992eb342ab7998501f63a56617"
+      "https://api.openweathermap.org/data/2.5/onecall?lat=28.538336&lon=-81.379234&appid=4f8e39992eb342ab7998501f63a56617&units=imperial"
     )
       .then((res) => res.json())
       .then(

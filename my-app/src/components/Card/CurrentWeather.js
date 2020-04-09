@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 
 const CurrentWeather = ({ location }) => (
   <Card.Title>
-    <h2>Weather in {location}</h2>
+    <h2>Orlando</h2>
   </Card.Title>
 );
 
