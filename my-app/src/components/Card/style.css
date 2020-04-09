@@ -1,0 +1,15 @@
+.currentCard {
+  margin-top: 2%;
+  width: 70%;
+  text-align: center;
+}
+
+.header {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.currentText {
+  font-size: 30px;
+  font-weight: normal;
+}

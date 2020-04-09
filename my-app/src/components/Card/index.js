@@ -45,7 +45,6 @@ class ControlledCard extends React.Component {
     const CardItems = this.state.items.map((list) => {
       return (
         <>
-          {/* <CurrentWeather current={this.state.current} /> */}
           <WeatherCard
             key={list.id}
             list={list}

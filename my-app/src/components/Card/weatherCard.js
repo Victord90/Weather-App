@@ -1,14 +1,24 @@
 import React from "react";
-import ListGroup from "react-bootstrap/ListGroup";
 import Card from "react-bootstrap/Card";
-import CurrentWeather from "./CurrentWeather";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import { CardDeck } from "react-bootstrap";
 
-const WeatherCard = ({ list, location }) => (
-  <ListGroup border="dark" style={{ width: "18rem", margin: "1rem" }}>
-    <Card.Body>
-      <h2>{list.weather[0].description}</h2>
-    </Card.Body>
-  </ListGroup>
+const WeatherCard = ({ list }) => (
+  <Container>
+    <Row>
+      <Col>
+        <CardDeck>
+          <Card>
+            <Card.Body>
+              <h2>{list.weather[0].description}</h2>
+            </Card.Body>
+          </Card>
+        </CardDeck>
+      </Col>
+    </Row>
+  </Container>
 );
 
 export default WeatherCard;
