@@ -14,6 +14,7 @@ class ControlledCard extends React.Component {
       location: "",
       current: "",
       currentFeel: "",
+      currentImg: "",
     };
   }
 
@@ -25,12 +26,14 @@ class ControlledCard extends React.Component {
       .then(
         (result) => {
           console.log(result);
+          console.log(result.current.weather[0].icon);
           this.setState({
             isLoaded: true,
             location: result.timezone,
             items: result.daily,
             current: result.current,
             currentFeel: result.current.weather[0].description,
+            currentImg: result.current.weather[0].icon,
           });
         },
         (error) => {
@@ -62,6 +65,7 @@ class ControlledCard extends React.Component {
           <CurrentWeather
             current={this.state.current}
             currentFeel={this.state.currentFeel}
+            currentImg={this.state.currentImg}
           />
           <Row>{CardItems}</Row>
         </Container>
