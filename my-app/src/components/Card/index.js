@@ -58,7 +58,7 @@ class ControlledCard extends React.Component {
 
     return (
       <>
-        <Container>
+        <Container fluid>
           <CurrentWeather
             current={this.state.current}
             currentFeel={this.state.currentFeel}
