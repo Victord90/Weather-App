@@ -4,13 +4,14 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { CardDeck } from "react-bootstrap";
+import ListGroup from "react-bootstrap/ListGroup";
 import "./style.css";
 
 const WeatherCard = ({ list }) => (
   <Container>
     <Row>
       <Col>
-        <CardDeck>
+        <ListGroup border="dark" style={{ width: "18rem", margin: "1rem" }}>
           <Card className="forcast">
             <Card.Header>
               <h3>{list.dt}</h3>
@@ -24,7 +25,7 @@ const WeatherCard = ({ list }) => (
               <h4>{list.weather[0].description}</h4>
             </Card.Body>
           </Card>
-        </CardDeck>
+        </ListGroup>
       </Col>
     </Row>
   </Container>

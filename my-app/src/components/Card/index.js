@@ -1,6 +1,8 @@
 import React from "react";
 import WeatherCard from "./weatherCard";
 import CurrentWeather from "./CurrentWeather";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
 
 class ControlledCard extends React.Component {
   constructor(props) {
@@ -56,11 +58,13 @@ class ControlledCard extends React.Component {
 
     return (
       <>
-        <CurrentWeather
-          current={this.state.current}
-          currentFeel={this.state.currentFeel}
-        />
-        {CardItems}
+        <Container>
+          <CurrentWeather
+            current={this.state.current}
+            currentFeel={this.state.currentFeel}
+          />
+          <Row>{CardItems}</Row>
+        </Container>
       </>
     );
   };
